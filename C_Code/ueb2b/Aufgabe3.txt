@@ -1,0 +1,73 @@
+Da wir in einem Array bei 0 anfangen zu zählen, werde ich im Folgendem vom
+0.,1. ... Element bzw, 0., 1., ..Position sprechen um a,b,.. auszudrücken.
+
+1) printf("%p\n", txt);
+--->0x7fff56370bcd
+%p gibt die Adresse des Zeiger des 0ten Elementes zurück, also von a.
+
+2) printf("%p\n", &zeiger[4]);
+--->0x7fff56370bd1
+Zeiger springt zur 5.Position im Array, da er schon auf das erste Element
+gesetzt wurde und gibt die Adresse des 5.Elemts aus, also von e.
+
+3) printf("%c\n", *zeiger);
+--->b
+da der Zeiger durch *zeiger=&txt[1] schon auf die erste Position zeigt,
+wird der Wert der ersten Position ausgegeben.
+
+4) printf("%p\n", zeiger + 3);
+--->0x7fff56370bd1
+da 1+3=4 wird die Adresse des 4.Elements ausgegeben.
+
+5) printf("%c\n", *(zeiger + 1 - 1));
+--->b
+da 1-1=0 wird durch *zeiger nachwievor das erste Element ausgegeben.
+
+6) printf("%p\n", ++zeiger);
+--->0x7fff56370bcf
+der Zeiger wird um eine Position weitergeschoben(auf c) und seine Adresse
+ausgegeben
+
+7) printf("%c\n", *++zeiger);
+--->d
+der Wert des zeigers wird dekrementiert
+
+8) printf("%p\n", zeiger);
+--->0x7fff56370bd0
+Die SPeicheradresse des 3.Elementes wird ausgegeben, aufgrund der
+vorangegangenen In- und Dekrementierung
+
+9) printf("%c\n", --(*zeiger));
+--->c
+der Zeiger wird dekrementiert und sein Wert an der 3.Position ausgegeben.
+
+10) printf("%c\n", *zeiger++);
+--->c
+der Zeiger bewegt sich zur nächsten Position (Postinkrementierung),aber gibt
+den vorangegangenen Wert zurück. Also den von Position 3.
+
+11) printf("%c\n", *(&zeiger[1] - 1));
+--->e
+???
+
+12) printf("%c\n", *(zeiger - 3));
+--->b
+zeiger zeigt auf das 4.Element(e) und wird um 3 Positionen nach links geschoben.
+somit wird das 1.Element im Array ausgegeben(b)
+
+13) printf("%c\n", *zeiger);
+---->e
+da der Zeiger durch das vorangegangene Inkrementieren nachwievor an 4.Position
+steht, wird e ausgegeben.
+
+14) printf("%c\n", zeiger[-1]);
+--->c
+entspricht *(zeiger-1)
+
+15) printf("%c\n", (zeiger + 1)[-1]);
+--->e
+entspricht *((zeiger+1)+1) also *(zeiger+2)
+
+16) printf("%ld\n", zeiger - txt);
+--->4
+%ld gibt die Größe des übrig gebliebenen Arrays zurück
