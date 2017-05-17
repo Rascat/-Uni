@@ -3,6 +3,8 @@
 #include "matrix.h"
 #include <string.h>
 
+typedef unsigned int uint;
+
 
 Matrix newMatrix(size_t rows, size_t cols){
 
@@ -35,16 +37,29 @@ void deleteMatrix(Matrix m, size_t rows){
     
     free(m);
 }
-/**
-void printMatrix(Matrix m, size_t rows, size_t cols){
-    unsigned int lengthPrintRow = cols * 2;
-    char renderedRow[lengthPrintRow + 1];
 
-    for(unsigned int i = 0; i < legthPrintRow; ++i){
-        
-    }	
+void printMatrix(Matrix m, size_t rows, size_t cols){
+    int lenR = snprintf(NULL,0, "%f",0.0);
+	for(uint i = 0; i < rows; ++i){
+		
+		char row[(cols * lenR) + 1];
+		
+		for(uint j = 0; j < cols; ++j){
+			double digit = m[i][j];
+			int len = snprintf(NULL,0,"%f", digit);
+			char str[len+1];
+			sprintf(str,"%f",digit);
+			
+			strcat(row,str);
+			strcat(row," ");
+		}
+		strcat(row,"\n");
+		printf("%s", row);
+	}
+	
+	
 }
-*/
+
 /**
 Matrix multMatrix(Matrix a, Matrix b, size_t n, size_t m, size_t p){
 	
@@ -57,4 +72,20 @@ void scaleMatrix(Matrix a, size_t rows, size_t cols, double val){
 			a[i][j] *= val;
 		}
 	}
+}
+
+bool equalMatrix( Matrix a, Matrix b, size_t rows, size_t cols){
+	
+	bool result = true;
+	
+	for(unsigned int i = 0; i < rows; ++i){
+		for(unsigned int j = 0; j < cols; ++j){
+			
+			if(a[i][j] != b[i][j]){
+				result = false;
+				break;
+			}
+		}
+	}
+	return result;
 }
