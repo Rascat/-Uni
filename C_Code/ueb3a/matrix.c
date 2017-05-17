@@ -35,13 +35,26 @@ void deleteMatrix(Matrix m, size_t rows){
     
     free(m);
 }
-
+/**
 void printMatrix(Matrix m, size_t rows, size_t cols){
     unsigned int lengthPrintRow = cols * 2;
     char renderedRow[lengthPrintRow + 1];
 
     for(unsigned int i = 0; i < legthPrintRow; ++i){
         
-    }    
-
+    }	
+}
+*/
+/**
+Matrix multMatrix(Matrix a, Matrix b, size_t n, size_t m, size_t p){
+	
+}
+*/
+void scaleMatrix(Matrix a, size_t rows, size_t cols, double val){
+	
+	for(unsigned int i = 0; i < rows; ++i ){
+		for(unsigned int j = 0; j < cols; ++j){
+			a[i][j] *= val;
+		}
+	}
 }
