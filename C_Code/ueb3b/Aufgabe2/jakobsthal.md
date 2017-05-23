@@ -8,4 +8,5 @@ Jacobsthal-Numbers
 
 Recursion Formula
 -----------------
-Jn-1 = 2Jn + (-1)^n oder Jn+1 = 2^n - Jn		
+J_(n+1) = 2J_n + (-1)^n           oder                
+J_(n+1) = 2^n - J_n		
