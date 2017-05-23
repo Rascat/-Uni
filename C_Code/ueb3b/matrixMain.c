@@ -1,14 +1,18 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "matrix.h"
+#include <inttypes.h>
+
 
 int main (void){
 	
-	Matrix test = newMatrix(4,4);
+	Matrix randomTest = randomMatrix(4,4);
 	
-	printMatrix(test,4,4);
+	char* randomString = toStringMatrix(randomTest,4,4);
 	
-	deleteMatrix(test,4);
+	printf("%s", randomString);
+	
+	deleteMatrix(randomTest,4);
 	
 	
 	

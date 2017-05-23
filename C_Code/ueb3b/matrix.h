@@ -102,4 +102,19 @@ void scaleMatrix( Matrix a, size_t rows, size_t cols, double val );
  */
 bool equalMatrix( Matrix a, Matrix b, size_t rows, size_t cols );
 
+/**
+ * Constructs and allocates a string (aka char array) where each row is rendered
+ * into a separate line, where the elements are separted by a single space.
+ *
+ * @param m Pointer to the matrix which should be rendered into a string.
+ * @param rows Number of rows.
+ * @param cols Number of columns.
+ * @return Pointer to the string (aka char array).
+ */
+char* toStringMatrix( Matrix m, size_t rows, size_t cols );
+
+Matrix randomMatrix(size_t rows, size_t cols);
+
+
+
 #endif  // MATRIX_H

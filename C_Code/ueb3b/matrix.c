@@ -2,9 +2,36 @@
 #include <stdio.h>
 #include "matrix.h"
 #include <string.h>
+#include <inttypes.h>
+#include <time.h>
 
 typedef unsigned int uint;
+typedef union {double dbl; uint64_t ull;} RndPattern;
 
+double randomDouble(){
+	RndPattern result;
+	
+ for( size_t i = 0; i < sizeof( double ) / 2; ++i ) {
+	result.ull = result.ull << 16 | ( rand() % 65536 );
+ }
+ return result.dbl;
+ 
+}
+
+Matrix randomMatrix( size_t rows, size_t cols ) {
+ srand(time(0));
+ Matrix m = newMatrix( rows, cols );
+ if( m ) {
+ for( size_t i = 0; i < rows; ++i ) {
+ if( m[i] ) {
+ for( size_t j = 0; j < cols; ++j ){
+ m[i][j] = randomDouble();
+ }
+ }
+ }
+ }
+ return m;
+ }
 
 Matrix newMatrix(size_t rows, size_t cols){
 
@@ -87,5 +114,40 @@ bool equalMatrix( Matrix a, Matrix b, size_t rows, size_t cols){
 			}
 		}
 	}
+	return result;
+}
+
+char* toStringMatrix(Matrix m, size_t rows, size_t cols){
+    char* result;
+	size_t sizeTotal = 0;
+	for(uint i = 0; i < rows; ++i){
+		for(uint j = 0; j < cols; ++j){
+			sizeTotal += snprintf(NULL,0, "%g", m[i][j]);
+			
+		}
+	}
+	sizeTotal += sizeof(char) * cols;
+	sizeTotal += sizeof(char) * rows;
+	sizeTotal += sizeof(char) * 8;
+	
+	result = malloc(sizeTotal);
+	
+	for(uint i = 0; i < rows; ++i){
+		for(uint j = 0; j < cols; ++j){
+			double digit = m[i][j];
+			int len = snprintf(NULL,0,"%g", digit);
+			char str[len+1];
+			sprintf(str,"%g",digit);
+			
+			strcat(result,str);
+			strcat(result, " ");
+			
+			if(j == cols - 1){
+				strcat(result, "\n");
+			}
+			
+		}
+	}	
+	strcat(result,"\0");
 	return result;
 }
