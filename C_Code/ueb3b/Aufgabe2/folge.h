@@ -12,9 +12,17 @@ char sizeOfDataType[10];
 char elementCount[10];
 } FileHeader;
 
+typedef enum {bigEndian, littleEndian} Endianness;
 
+double doubleSwap(const double value);
 
-void readBinaryHeaderFile(const char *fileName);
+Endianness systemEndian();
+
+double *endianDoubleSwap(double *result, const char *endian, const int elementCount);
+
+FileHeader *readBinaryHeaderFile(const char *fileName);
+
+double *readBinaryFile(const char *fileName);
 
 
 

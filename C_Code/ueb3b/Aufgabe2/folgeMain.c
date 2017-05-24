@@ -7,6 +7,8 @@ int main(){
 
   char *fileName = "C:\\Users\\Lucas\\Projects\\WeeklyChallenges\\C_Code\\ueb3b\\Aufgabe2\\exercise3b.bin";
   readBinaryHeaderFile(fileName);
+  readBinaryFile(fileName);
+
 
   return 0;
 }
