@@ -17,14 +17,22 @@ double recursive(unsigned int n){
 
 }
 
-void readBinaryHeaderFile(const char *fileName)
+FileHeader* readBinaryHeaderFile(const char *fileName)
 {
 	FILE *fp;
+	FileHeader tmp;
+	FileHeader *result = &tmp;
 	fp = fopen(fileName, "rb");
-	int sizeFileHeader = sizeof(FileHeader);
-	char buffer[sizeFileHeader + 1];
-	fgets(buffer, sizeFileHeader + 1, fp);
-	printf("%s\n", buffer);
+	if(!fp){
+		printf("Unable to find file");
+		exit(1);
+	}
 
+	fread(result,sizeof(FileHeader),1,fp);
+
+	printf("%s\n",result->endian);
+
+	fclose(fp);
+	return result;
 
 }
