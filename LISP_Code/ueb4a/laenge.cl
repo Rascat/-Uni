@@ -22,3 +22,4 @@
 		
   
 (format t "~d~%" (sortieren '((moin hallo tschuess) (moin moin) (und hallo))))
+(format t "~d~%" (sortieren '((a b c d g e)(4 5 6 7 2 3 ) (5 6 7 2 3 5 5)(j jk dfsad gf)(df dk)(df dks ls))))
