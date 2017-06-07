@@ -1,0 +1,15 @@
+;; Programm quer zur berechnung der Quersumme einer Zahl n (n ist Integer)
+;; (format t "~s~%" (concatenate 'string "" (princ-to-string 12)))
+
+(defun quersumme (n)
+	(setq summe 0)
+	(setq zahl (concatenate 'string "" (princ-to-string n)))
+	(loop for d across zahl
+		do (setq summe (+ summe (digit-char-p d)))
+	)
+	(format t "Die Quersumme von ~d betraegt ~d.~%" zahl summe)
+)
+(quersumme 12345)
+(quersumme 234)
+(quersumme 1)
+(quersumme 22005473211)
