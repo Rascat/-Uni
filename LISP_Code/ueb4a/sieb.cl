@@ -5,6 +5,7 @@
 	* Streiche im Sieb alle vielfachen j*p <= n mit j \in {N}
 ||#
 
+;; Funktion prüft ob der Divisor den Dividenten mit Rest 0 teilt
 (defun doesDivide (divident divisor)
 	(if (equal (mod divident divisor) 0)
 		t
@@ -12,10 +13,12 @@
 	)
 )
 
+;; Funktion zur Anwendung des Prinzips "Sieb des Erathostenes"
 (defun sieben (n)
 	
 )
 
+;; Funktion zum rekursiven entfernen aller unerwünschter Elemente aus dem Sieb
 (defun sieben_r (liste prime n)
 	(if (equal (car liste) n)
 		(setq result (cons (car liste) '()))
@@ -25,6 +28,7 @@
 
 )
 
+;; Funktion zum rekursiven erstellen einer Liste mit den Ganzzahlen 2 - n
 (defun auffuellen_r (maximum)
 	(if(equal maximum 1)
 		(setq result (cons maximum '()))
@@ -36,6 +40,8 @@
 result
 
 )
+
+;; Testfeld
 
 (setq n 15)
 (format t "~d~%" (auffuellen_r n))

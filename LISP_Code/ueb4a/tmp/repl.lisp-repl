@@ -1,0 +1,5 @@
+CL-USER> (+ 2 7)
+9
+
+CL-USER> (setq liste1 '((katze hund maus)(1 2 4)(s 3 c))
+CL-USER> 
