@@ -1,0 +1,20 @@
+1;Leonardo;Fibonacci;Mathematiker;23
+2;Zhu;Shijie;Mathematiker;21
+3;Michael;Stifel;Theologe;35
+4;Johannes;Kepler;Astronom;23
+5;Isaac;Newton;Physiker;23
+6;Sofja;Kowalewskaja;Mathematiker;18
+7;Seki;Takakazu;Mathematiker;23
+8;Gottfried Wilhelm;Leibniz;Physiker;30
+9;John;Smith;Physiker;56
+10;Leonhard;Euler;Mathematiker;47
+11;Joseph-Louis;Lagrange;Astronom;19
+12;Carl Friedrich;Gauß;Mathematiker;51
+13;James;Cook;Seefahrer;23
+14;Leif;Eriksson;Seefahrer;23
+15;Francis;Drake;Freibeuter;23
+16;Amerigo;Vespucci;Seefahrer;32
+17;Ferdinand;Magellan;Seefahrer;33
+18;Christoph;Kolumbus,;Seefahrer;81
+19;Zheng;He;Seefahrer;17
+20;Emmy;Noether;Physiker;23
