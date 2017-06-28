@@ -29,8 +29,8 @@ def printUser(dictDB, id):
 
 readFile(dictDB,fileName)
 
-for k,v in dictDB.items():
-    if v == 'Mathematiker':
+for k,v in list(dictDB.items()):
+    if v['job'] == 'Mathematiker':
         removeUser(dictDB, k)
         
 for id in dictDB:
