@@ -28,13 +28,15 @@ def printUser(dictDB, id):
         print("the key is not in the Dictionary")
 
 readFile(dictDB,fileName)
-for id in dictDB:
-    user = dictDB[id]
-    if user['job'] == 'Mathematiker':
-        removeUser(dictDB, id)
+
+for k,v in dictDB.items():
+    if v == 'Mathematiker':
+        removeUser(dictDB, k)
+        
 for id in dictDB:
     user = dictDB[id]
     if user['age'] == 23:
         printUser(dictDB, id)
+
     
 
