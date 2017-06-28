@@ -7,12 +7,23 @@ def sieb(n):
     
     sieb.pop(0)
     sieb.pop(0)
-    print(sieb)
     
     j = 0
-    while j < len(sieb):
-        sieb = sieb[j :len(sieb) :sieb[j]]
+  
+    while j < sieb.__len__():
+        
+        if (sieb[j] * sieb[j]) >= n:
+            break
+        negative = sieb[j::sieb[j]]
+        negative.pop(0)
+        
+        for i in negative:
+            sieb.remove(i)
         j += 1
+    
     print(sieb)
 
+
+sieb(5)
+sieb(9)
 sieb(12)
